@@ -111,6 +111,8 @@ class customCarousel extends HTMLElement {
         }
     }
 
+    
+
     connectedCallback() {
         if (this.hasAttribute("data")) {
             this.render();
