@@ -1,91 +1,5 @@
-class customButton extends HTMLElement {
-    constructor() {
-        super();
-        this.text;
-        this.backgroundColor
-        this.color;
-        this.navigate;
-
-    }
-    static get observedAttributes() {
-        return ["color", "background-color", "text", "navigate"];
-    }
-
-    attributeChangedCallback(atribute, oldValue, newValue) {
-        switch (atribute) {
-            case "color":
-                this.color = newValue;
-                break;
-            case "background-color":
-                this.backgroundColor = newValue;
-                break;
-            case "text":
-                this.text = newValue;
-                break;
-            case "navigate":
-                this.navigate = newValue;
-                break;
-        }
-    }
-
-    connectedCallback() {
-        this.innerHTML = `
-        <a href="${this.navigate}"><button 
-        style="background-color: ${this.backgroundColor}; color:${this.color}; border: solid 1px white; padding:10px 14px; border: none; border-radius: 4px; cursor: pointer;">
-        ${this.text}
-        </button></a>
-        </br>`;
-
-    }
-
-}
-
-class customCard extends HTMLElement {
-    constructor() {
-        super();
-        this.title;
-        this.description;
-        this.image;
-        this.navigation
-    }
-    static get observedAttributes() {
-        return ["title", "description", "image", "navigation"];
-    }
-
-    attributeChangedCallback(attribute, oldValue, newValue) {
-        if (oldValue !== newValue) {
-            switch (attribute) {
-                case "title":
-                    this.title = newValue;
-                    break;
-                case "description":
-                    this.description = newValue;
-                    break;
-                case "image":
-                    this.image = newValue;
-                    break;
-                case "navigation":
-                    this.navigation = newValue;
-                    break;
-            }
-        }
-    }
-
-
-    connectedCallback() {
-        this.innerHTML = `
-        <div class = "card">
-            <div class = "image-card">
-                <img src="${this.image}" alt="${this.title}">
-            </div>
-            <div class="article-preview">
-                <h2>${this.title}</h2>
-                <p>${this.description}</p>
-                <a href="${this.navigation}"><button>Ir al curso</button></a>
-            </div>
-        </div>`;
-    }
-}
+import {customButton} from './customButton.js';
+import {customCard} from './customCard.js';
 
 class customCarousel extends HTMLElement {
     constructor() {
@@ -260,6 +174,4 @@ class customInput extends HTMLElement {
 
 
 window.customElements.define('custom-carousel', customCarousel);
-window.customElements.define('custom-button', customButton);
-window.customElements.define('custom-card', customCard);
 window.customElements.define('custom-input', customInput);
