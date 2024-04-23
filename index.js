@@ -1,5 +1,5 @@
-import {customButton} from './customButton.js';
-import {customCard} from './customCard.js';
+import {customButton} from './customButton/customButton.js';
+import {customCard} from './customCard/customCard.js';
 
 class customCarousel extends HTMLElement {
     constructor() {
