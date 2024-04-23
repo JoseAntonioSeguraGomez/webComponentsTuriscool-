@@ -2,6 +2,25 @@
     border-radius: 10px;
 }
 
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: auto;
+    border: 10px solid #F3F8FF;
+    margin: 20px;
+    margin-left: 0px;
+    margin-right: 5px;
+    background-color: #F3F8FF;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px rgba(255, 255, 255, 0.1);
+    transition: box-shadow 0.3s ease;
+    overflow: hidden;
+    transition: 0.4s;
+
+
+}
+
 .card:hover {
     box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.2);
 }

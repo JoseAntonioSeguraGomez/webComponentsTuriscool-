@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>custom-buttont</title>
-    <script type="module" src="https://cdn.jsdelivr.net/gh/JoseAntonioSeguraGomez/webComponentsTuriscool-@v1.0.5/index.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/gh/JoseAntonioSeguraGomez/webComponentsTuriscool-@v1.0.6/index.js"></script>
     <link rel="stylesheet" href="./customCard/styleCard.css">
+    <link rel="stylesheet" href="./customCarousel/styleCarousel.css">
     <style>
         html {
             scroll-behavior: smooth;
@@ -22,102 +23,13 @@
 
         }
 
-        .card {
-            display: flex;
-            flex-direction: column;
-            width: 300px;
-            height: auto;
-            border: 10px solid #F3F8FF;
-            margin: 20px;
-            margin-left: 0px;
-            margin-right: 5px;
-            background-color: #F3F8FF;
-            border-radius: 10px;
-            box-shadow: 0px 2px 4px rgba(255, 255, 255, 0.1);
-            transition: box-shadow 0.3s ease;
-            overflow: hidden;
-            transition: 0.4s;
-
-
-        }
-
-        .custom-carousel {
-            width: 90vw;
-            display: flex;
-            overflow-x: scroll;
-            scroll-snap-type: x mandatory;
-            padding: 10px;
-            margin-bottom: 100px;
-            background-color: white;
-            border: solid 2px #05BFAD;
-            border-radius: 10px
-        }
-
-        .custom-carousel img {
-            width: 300px;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 10px;
-            transition: transform 0.3s ease;
-        }
-
-        .custom-carousel img:hover {
-            transform: scale(1.1);
-        }
-
-        ::-webkit-scrollbar {
-            cursor: pointer;
-        }
-
-        .custom-carousel::-webkit-scrollbar {
-            height: 40px;
-
-        }
-
-        .custom-carousel::-webkit-scrollbar-thumb {
-            background: #05BFAD;
-            background-clip: content-box;
-            border-radius: 30px;
-            border: solid 15px transparent;
-        }
-
-
-
         h1 {
             color: #ddd;
             margin-bottom: 20px;
         }
-
-        custom-input input{
-            width: 300px;
-            height: 25px;
-            border: 2px solid #05BFAD;
-            border-radius: 5px;
-            padding: 10px;
-            margin: 20px;
-            background-color: #F3F8FF;
-            color: #333;
-            font-size: 16px;
-            font-weight: 600;
-            transition: 0.4s;
-        }
-
-        .unlocked {
-            pointer-events: all;
-            opacity: 1;
-        }
-
-        .locked {
-            pointer-events: none;
-            opacity: 0.6;
-        }
     </style>
 </head>
-
 <body>
-
-
-
     <h1>Tu itinerario</h1>
     <custom-carousel data='{
         "images": [
