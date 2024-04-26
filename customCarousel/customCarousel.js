@@ -86,8 +86,8 @@ export class customCarousel extends HTMLElement {
 
     renderNewUser() {
         this.innerHTML = `
-            <div class="custom-carousel">
-                ${this.titles.map((title, index) => {
+        <div class="custom-carousel" style="border-color:${this.borderColor}; background-color:${this.backgroudColor};">
+        ${this.titles.map((title, index) => {
                     if (index === 0 || this.progress[index] === 100) {
                         return `
                             <custom-card class="unlocked"
