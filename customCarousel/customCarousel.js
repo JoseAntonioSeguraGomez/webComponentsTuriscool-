@@ -9,6 +9,8 @@ export class customCarousel extends HTMLElement {
         this.progress = [];
         this.blocked = false;
         this.newUser = false;
+        this.backgroudColor = "white";
+        this.borderColor = "#05BFAD"; 
 
         this.url = "https://academy.turiscool.com/admin/api/"
         this.token = "Bearer 17xa7adwlycG4qrbRatBdCHW41xtl9jNyaBq4d45";
@@ -25,7 +27,7 @@ export class customCarousel extends HTMLElement {
     }
 
     static get observedAttributes() {
-        return ["data"];
+        return ["data", "backgroudColor", "borderColor"];
     }
 
     attributeChangedCallback(attribute, oldValue, newValue) {
@@ -35,6 +37,7 @@ export class customCarousel extends HTMLElement {
             this.titles = data.titles;
             this.descriptions = data.descriptions;
             this.navigations = data.navigations;
+            this.backgroudColor = newValue; 
             this.filterProgressUser();
         }
     }
@@ -109,7 +112,7 @@ export class customCarousel extends HTMLElement {
 
     renderOldUser() {
         this.innerHTML = `
-            <div class="custom-carousel">
+            <div class="custom-carousel" style="border-color:${this.borderColor} background-color:${this.backgroudColor}">
                 ${this.titles.map((title, index) => `
                     <custom-card id="unlocked"
                         title="${title}" 

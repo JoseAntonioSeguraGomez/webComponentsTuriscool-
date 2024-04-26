@@ -4,7 +4,7 @@ export class customCard extends HTMLElement {
         this.title;
         this.description;
         this.image;
-        this.navigation
+        this.navigation;
     }
     static get observedAttributes() {
         return ["title", "description", "image", "navigation"];
