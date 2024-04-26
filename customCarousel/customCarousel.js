@@ -38,6 +38,7 @@ export class customCarousel extends HTMLElement {
             this.descriptions = data.descriptions;
             this.navigations = data.navigations;
             this.backgroudColor = newValue; 
+            this.borderColor = newValue;
             this.filterProgressUser();
         }
     }
@@ -112,7 +113,7 @@ export class customCarousel extends HTMLElement {
 
     renderOldUser() {
         this.innerHTML = `
-            <div class="custom-carousel" style="border-color:${this.borderColor} background-color:${this.backgroudColor}">
+            <div class="custom-carousel" style="border-color:${this.borderColor}; background-color:${this.backgroudColor};">
                 ${this.titles.map((title, index) => `
                     <custom-card id="unlocked"
                         title="${title}" 
