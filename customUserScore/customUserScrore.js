@@ -36,13 +36,11 @@ attributeChangedCallback(attribute, oldValue, newValue) {
 
 
 fetchProgress() {
-    console.log(this.userID);
     fetch(`${this.url}/v2/users/${this.userID}/progress`, this.requestOptions)
     .then(response => response.json())
     .then(progressData => {
         this.progress.push(progressData.data);
         this.calculateFilterData();
-        console.log(this.progress);
     })
 
 }
@@ -81,7 +79,6 @@ calculateFilterData() {
 
 
 connectedCallback() {
-    console.log(this.filterData);
     this.innerHTML = `
     <div class = "userProgress">
         <h2>Este es tu resumen de todos tus cursos:</h2>
