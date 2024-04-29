@@ -5,10 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>custom-buttont</title>
-    <script type="module" src="./customToast/customToast.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/gh/JoseAntonioSeguraGomez/webComponentsTuriscool-@v1.0.6/index.js"></script>
+    <script type="module" src="./customUserScore/customUserScrore.js"></script>
     <link rel="stylesheet" href="./customCard/styleCard.css">
     <link rel="stylesheet" href="./customCarousel/styleCarousel.css">
     <link rel="stylesheet" href="./customToast/styleToast.css">
+    <link rel="stylesheet" href="./customUserScore/styleUserScore.css">
     <style>
         html {
             scroll-behavior: smooth;
@@ -16,6 +18,7 @@
 
         body {
             display: flex;
+            width: 100%;
             flex-direction: column;
             justify-content: center;
             align-items: center;
@@ -28,10 +31,16 @@
             color: #ddd;
             margin-bottom: 20px;
         }
+
+        .userProgress {
+            margin-bottom: 200px;
+        }
     </style>
 </head>
 <body>
     <h1>Tu itinerario</h1>
+    <custom-user-score user-id="65e21c42dd3275c7e10d3130"></custom-user-score>
+
     <custom-carousel data='{
         "images": [
             "https://turiscool.com/wp-content/uploads/2022/11/female-housekeeping-opening-window-curtains-e1669291725384-768x384.jpg",
@@ -82,9 +91,6 @@
             "https://academy.turiscool.com/course/gobernanta-ejecutiva-dia-a-dia"
         ]
     }'></custom-carousel>
-
-
-
     <custom-button color="red" background-color="white" text="ir a google"
         navigate="https://www.google.es/"></custom-button>
     <custom-button color="white" background-color="black" text="ir a turiscool"
@@ -93,7 +99,6 @@
         image="https://turiscool.com/wp-content/uploads/2022/11/female-housekeeping-opening-window-curtains-e1669291725384-768x384.jpg"
         navigation="https://www.google.es/">
     </custom-card>
-    <custom-toast toastType="error"></custom-toast>
     <custom-card title="Pepe el Chocolatero" description="No deberias poder leer todo esto" image="https://pbs.twimg.com/media/EX0RZeDWAAAzFIK.jpg" navigation="https://www.google.es/" ></custom-card>
     <custom-input cursor="pointer" textType="password" place="Soy el fondo" data="Acepto todo" />
 
