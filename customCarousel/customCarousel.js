@@ -44,23 +44,37 @@ export class customCarousel extends HTMLElement {
 
 
     async renderNewUser() {
-        await this.delay(5000);
-        this.innerHTML = `
-        <div class="custom-carousel" style="border-color:${this.borderColor}; background-color:${this.backgroudColor};">
-        ${this.titles.map((title, index) => {
-                        return `
-                            <custom-card class="unlocked"
-                                title="${title}" 
-                                description="${this.descriptions[index]}" 
-                                image="${this.images[index]}"
-                                navigation="${this.navigations[index]}"
-                            >
-                            </custom-card>`;
-
-                    }
-                ).join("")}
-            </div>`;
+        let arrayCourses = [];
+        
+        // Crear un contenedor para las tarjetas
+        const cardContainer = document.createElement('div');
+        cardContainer.classList.add('custom-carousel');
+        cardContainer.style.borderColor = this.borderColor;
+        cardContainer.style.backgroundColor = this.backgroundColor;
+    
+        for (let index = 0; index < this.titles.length; index++) {
+            const card = document.createElement('custom-card');
+            card.classList.add('unlocked');
+            card.title = this.titles[index];
+            card.description = this.descriptions[index];
+            card.image = this.images[index];
+            card.navigation = this.navigations[index];
+    
+            // Agregar la tarjeta al contenedor
+            cardContainer.appendChild(card);
+    
+            arrayCourses.push(card);
+            if (index < this.titles.length - 1) {
+                await this.delay(1000);
+            }
+        }
+    
+        // Agregar el contenedor al elemento custom-carousel
+        this.appendChild(cardContainer);
     }
+    
+    
+    
 
     delay(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
