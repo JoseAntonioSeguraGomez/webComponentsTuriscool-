@@ -44,7 +44,7 @@ export class customCarousel extends HTMLElement {
 
 
     async renderNewUser() {
-        await this.delay(1000);
+        await this.delay(5000);
         this.innerHTML = `
         <div class="custom-carousel" style="border-color:${this.borderColor}; background-color:${this.backgroudColor};">
         ${this.titles.map((title, index) => {
