@@ -42,7 +42,9 @@ export class customCarousel extends HTMLElement {
         }
     }
 
-    renderNewUser() {
+
+    async renderNewUser() {
+        await this.delay(1000);
         this.innerHTML = `
         <div class="custom-carousel" style="border-color:${this.borderColor}; background-color:${this.backgroudColor};">
         ${this.titles.map((title, index) => {
@@ -59,6 +61,11 @@ export class customCarousel extends HTMLElement {
                 ).join("")}
             </div>`;
     }
+
+    delay(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
 }
 
 window.customElements.define('custom-carousel', customCarousel);
